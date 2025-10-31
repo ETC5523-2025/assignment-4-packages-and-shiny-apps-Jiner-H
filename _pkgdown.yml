@@ -1,0 +1,16 @@
+url: ~
+template:
+  bootstrap: 5
+
+navbar:
+  structure:
+    left:
+      - home
+      - reference
+      - articles
+
+articles:
+  - title: "Vignettes"
+    contents:
+      - deltaoutbreak-intro
+
