@@ -1,0 +1,79 @@
+---
+title: "Exploring quarantine performance during the Delta period"
+author: "Jin Hu"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Exploring quarantine performance during the Delta period}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(deltaoutbreak)
+library(dplyr)
+library(ggplot2)
+```
+
+### Background
+
+This package reconstructs a synthetic dataset based on the article:
+
+> **"COVID-19 in low-tolerance border quarantine systems: Impact of the Delta variant of SARS-CoV-2" (PMC8993115)**
+
+The original article did not publish row-level data. We therefore simulated monthly observations representing arrivals, detected infections in quarantine, leakage events, and resulting local cases. The aim is to provide a *teaching dataset* that still shows the key pattern from the paper: **the Delta period placed greater pressure on border quarantine systems.**
+
+### Load the data
+
+```{r}
+data("delta_cases")
+dplyr::glimpse(delta_cases)
+```
+
+### Summaries by period
+
+We can use the helper function that ships with the package:
+
+```{r}
+summarise_leakage(delta_cases)
+```
+
+This table should show that the delta period has higher detected infections and more leakage on average.
+
+### Plotting leakage over time
+```{r}
+plot_leakage_trend(delta_cases)
+```
+This plot illustrates how leakage events changed around mid-2021, when we switch from pre-delta to delta.
+
+
+### Reproducibility
+The data were generated using the script in data-raw/delta_cases.R. You can re-run that script to regenerate the dataset if needed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
