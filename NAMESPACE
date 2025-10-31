@@ -2,4 +2,5 @@
 
 export(filter_period)
 export(plot_leakage_trend)
+export(run_delta_app)
 export(summarise_leakage)
