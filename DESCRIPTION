@@ -1,0 +1,13 @@
+Package: deltaoutbreak
+Title: Analysis of COVID-19 in Low-Tolerance Border Quarantine Systems
+Version: 0.0.0.9000
+Authors@R: 
+    person("Jin", "Hu", email = "jhuu0096@student.monash.edu", role = c("aut", "cre"))
+Description: Recreates and explores the analysis from "COVID-19 in low-tolerance border quarantine systems: Impact of the Delta variant of SARS-CoV-2".
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Depends: 
+    R (>= 3.5)
+LazyData: true

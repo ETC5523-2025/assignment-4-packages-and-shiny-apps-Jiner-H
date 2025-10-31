@@ -1,0 +1,22 @@
+#' Reconstructed quarantine / Delta-period dataset
+#'
+#' A synthetic dataset created to mimic the structure and main signals
+#' from the article “COVID-19 in low-tolerance border quarantine systems:
+#' Impact of the Delta variant of SARS-CoV-2” (PMC8993115).
+#' This dataset is for teaching/demo purposes only and does **not** contain
+#' real patient or facility-level data.
+#'
+#' @format A tibble with one row per month from 2020-11 to 2021-10:
+#' \describe{
+#'   \item{date}{Date, first day of month}
+#'   \item{period}{Factor: "pre-delta" or "delta"}
+#'   \item{variant}{Character, e.g. "Delta"}
+#'   \item{arrivals}{Integer, number of incoming travellers}
+#'   \item{detected_in_quarantine}{Integer, detected infections in quarantine}
+#'   \item{leakage}{Integer, number of leakage events}
+#'   \item{local_cases}{Integer, community cases linked to leakage}
+#'   \item{leakage_per_1000_arrivals}{Numeric, helper rate}
+#'   \item{detected_rate}{Numeric, helper rate}
+#' }
+#' @source Reconstructed from published summary; no original data were available.
+"delta_cases"
