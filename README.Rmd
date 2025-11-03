@@ -13,14 +13,14 @@ The dataset keeps the key signal from the paper: **the Delta period put more pre
 ## Installation
 
 You can install the development version from GitHub with:
-```{r}
+```{r install, eval=FALSE}
 # install.packages("remotes")
-remotes::install_github("Jiner-H/deltaoutbreak")
+remotes::install_github("ETC5523-2025/assignment-4-packages-and-shiny-apps-Jiner-H")
 ```
 
 ## Shiny app
 This package ships with an interactive Shiny app to explore pre-Delta vs Delta periods.
-```{r}
+```{r eval=FALSE}
 library(deltaoutbreak)
 run_delta_app()
 ```
@@ -32,7 +32,7 @@ explains how to interpret the outputs
 
 ## Data
 The main dataset is:
-```{r}
+```{r eval=FALSE}
 data("delta_cases")
 head(delta_cases)
 ```
@@ -54,7 +54,7 @@ plot_leakage_trend() — quick ggplot for vignettes / reports
 ## Documentation website
 
 The pkgdown site for this package is here:
-https://Jiner-H.github.io/deltaoutbreak/
+https://etc5523-2025.github.io/assignment-4-packages-and-shiny-apps-Jiner-H/
 
 ## Notes
 Data are synthetic.

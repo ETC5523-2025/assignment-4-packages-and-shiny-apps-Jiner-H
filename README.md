@@ -1,0 +1,65 @@
+
+# deltaoutbreak
+
+`deltaoutbreak` is a teaching R package that **reconstructs** the
+analysis from  
+*“COVID-19 in low-tolerance border quarantine systems: Impact of the
+Delta variant of SARS-CoV-2”* (PMC8993115).
+
+Because the original article did **not** publish row-level data, this
+package uses a **synthetic dataset** generated in
+`data-raw/delta_cases.R`.  
+The dataset keeps the key signal from the paper: **the Delta period put
+more pressure on border quarantine systems**.
+
+## Installation
+
+You can install the development version from GitHub with:
+
+``` r
+# install.packages("remotes")
+remotes::install_github("ETC5523-2025/assignment-4-packages-and-shiny-apps-Jiner-H")
+```
+
+## Shiny app
+
+This package ships with an interactive Shiny app to explore pre-Delta vs
+Delta periods.
+
+``` r
+library(deltaoutbreak)
+run_delta_app()
+```
+
+The app: uses the package data (not read.csv) lets you filter by period
+shows time series and a period-level summary explains how to interpret
+the outputs
+
+## Data
+
+The main dataset is:
+
+``` r
+data("delta_cases")
+head(delta_cases)
+```
+
+It contains monthly observations from 2020-11 to 2021-10, with: period
+(pre-delta / delta) arrivals detected_in_quarantine leakage local_cases
+rate variables for plotting
+
+## Functions
+
+Key helper functions: filter_period() — filter the dataset to one period
+summarise_leakage() — period-level summary (used in the Shiny app)
+plot_leakage_trend() — quick ggplot for vignettes / reports
+
+## Documentation website
+
+The pkgdown site for this package is here:
+<https://etc5523-2025.github.io/assignment-4-packages-and-shiny-apps-Jiner-H/>
+
+## Notes
+
+Data are synthetic. Structure and variables are aligned with the
+analysis described in PMC8993115.
